@@ -1,0 +1,24 @@
+version: '3.8'
+services:
+    imposter-be:
+        build:
+            dockerfile: Dockerfile
+            context: ./backend
+        container_name: imposter-be
+        ports:
+            - 4700:4700
+        volumes:
+            - ./backend:/app/backend
+        environment:
+            PORT: 4700
+            ENVIRONMENT: local
+            LOG_LEVEL: DEBUG
+            CORS_HOSTS: http://localhost:3000
+        networks:
+            - local
+
+networks:
+    local:
+        external: false
+        driver: bridge
+        name: local
