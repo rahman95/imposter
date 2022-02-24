@@ -1,17 +1,40 @@
 {
-  "name": "imposter-monorepo",
-  "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
-  "scripts": {},
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/rahman95/imposter.git"
-  },
-  "author": "",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/rahman95/imposter/issues"
-  },
-  "homepage": "https://github.com/rahman95/imposter#readme"
+	"name": "imposter-monorepo",
+	"version": "1.0.0",
+	"description": "",
+	"engines": {
+		"npm": ">=6.0.0 <7.0.0",
+		"node": ">=14.0.0 <15.0.0"
+	},
+	"scripts": {
+		"start:fe": "cd frontend; npm run start",
+		"start:be": "cd backend; docker-compose down; COMPOSE_PROFILES=$1 docker-compose up --build -d",
+		"start": "npm run start:be; npm run start:fe",
+		"lint": "./scripts/lint.sh",
+		"lint:fix": "./scripts/lint.sh fix"
+	},
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/rahman95/imposter.git"
+	},
+	"author": "",
+	"license": "ISC",
+	"bugs": {
+		"url": "https://github.com/rahman95/imposter/issues"
+	},
+	"homepage": "https://github.com/rahman95/imposter#readme",
+	"devDependencies": {
+		"eslint": "^8.9.0",
+		"eslint-config-airbnb": "^19.0.4",
+		"eslint-config-prettier": "^8.3.0",
+		"eslint-plugin-cypress": "^2.12.1",
+		"eslint-plugin-import": "^2.25.4",
+		"eslint-plugin-jest": "^26.1.1",
+		"eslint-plugin-jsx-a11y": "^6.5.1",
+		"eslint-plugin-mocha": "^10.0.3",
+		"eslint-plugin-react": "^7.28.0",
+		"eslint-plugin-react-hooks": "^4.3.0",
+		"prettier": "2.5.1",
+		"prettier-plugin-sh": "0.8.1"
+	}
 }

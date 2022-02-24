@@ -1,18 +1,17 @@
-const express = require("express");
-const path = require("path");
-const config = require("./config");
-const indexRouter = require("./routes/index");
+const express = require('express')
+const config = require('./config')
+const indexRouter = require('./routes/index')
 
-const app = express();
+const app = express()
 
 app.locals = {
-  ...app.locals,
-  config,
-};
+	...app.locals,
+	config,
+}
 
-app.use(express.json());
-app.disable("x-powered-by");
+app.use(express.json())
+app.disable('x-powered-by')
 
-app.use("/", indexRouter);
+app.use('/', indexRouter)
 
-module.exports = app;
+module.exports = app

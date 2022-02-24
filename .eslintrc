@@ -1,0 +1,81 @@
+{
+	"root": true,
+	// The last override block has the highest precedence
+	// each override starting at the last one gets merged into the previous override to create the final config for a file path
+	"overrides": [
+		// general setup for most js files except frontend/src which has react and gets compiled with babel and webpack
+		{
+			"files": ["*"],
+			"excludedFiles": ["**/frontend/src/**/*"],
+			"extends": ["airbnb-base"],
+			"parserOptions": {
+				"ecmaVersion": 2020,
+				"sourceType": "script"
+			},
+			"rules": {
+				// turned off for properties of a function argument that is an object as
+				// middleware-type functions can change an object's properties then pass it on
+				"no-param-reassign": ["error", { "props": false }],
+				// prettier automatically adds parens where required
+				"no-return-assign": ["error", "except-parens"],
+				"import/no-extraneous-dependencies": [
+					"error",
+					{
+						// some parts of the codebase are only used in development so their
+						// dependencies only need to be devDependencies
+						"devDependencies": [
+							"services/page-manager/index.js",
+							"services/page-manager/webpack.config*",
+							"**/scripts/**/*",
+							"**/tests/**/*",
+							"services/page-service/tests/fakes/navigation-elements.js"
+						]
+					}
+				],
+				"no-plusplus": ["error", { "allowForLoopAfterthoughts": true }]
+			}
+		},
+		{
+			// compiled code in frontend
+			"files": ["**/frontend/src/**/*"],
+			"extends": ["airbnb"],
+			"parserOptions": {
+				"ecmaVersion": 2020
+			},
+			"env": {
+				"browser": true
+			},
+			"settings": {
+				"react": {
+					"version": "17"
+				}
+			},
+			"rules": {
+				// we are not using React prop types
+				"react/prop-types": "off",
+				// just warns to encourage "best practice"
+				"import/prefer-default-export": "warn",
+				"react/jsx-props-no-spreading": [
+					"warn",
+					{
+						"html": "enforce",
+						"custom": "enforce",
+						"explicitSpread": "ignore",
+						"exceptions": []
+					}
+				],
+				"react/function-component-definition": [
+					"error",
+					{
+						"namedComponents": "arrow-function"
+					}
+				]
+			}
+		},
+		{
+			// turn off all rules that conflict with prettier everywhere
+			"files": ["*"],
+			"extends": ["prettier"]
+		}
+	]
+}
