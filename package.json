@@ -1,0 +1,17 @@
+{
+  "name": "imposter-monorepo",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rahman95/imposter-card-game.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/rahman95/imposter-card-game/issues"
+  },
+  "homepage": "https://github.com/rahman95/imposter-card-game#readme"
+}
