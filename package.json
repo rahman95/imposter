@@ -6,12 +6,12 @@
   "scripts": {},
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/rahman95/imposter-card-game.git"
+    "url": "git+https://github.com/rahman95/imposter.git"
   },
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/rahman95/imposter-card-game/issues"
+    "url": "https://github.com/rahman95/imposter/issues"
   },
-  "homepage": "https://github.com/rahman95/imposter-card-game#readme"
+  "homepage": "https://github.com/rahman95/imposter#readme"
 }
