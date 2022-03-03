@@ -1,0 +1,17 @@
+.button-container {
+    display: flex;
+    justify-content: end;
+}
+
+button {
+    background-color: black;
+    color: white;
+    padding: 0.5rem 1rem;
+    border: none;
+    font-weight: bold;
+    font-size: 0.75rem;
+}
+
+button:hover {
+    background-color: grey;
+}

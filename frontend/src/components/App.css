@@ -1,8 +1,10 @@
-.App {
+@import url('https://fonts.googleapis.com/css2?family=Amatic+SC:wght@700&display=swap');
+
+.app {
 	text-align: center;
 }
 
-.App-header {
+.section {
 	background-color: #282c34;
 	min-height: 100vh;
 	display: flex;
@@ -13,21 +15,71 @@
 	color: white;
 }
 
+.section h1 {
+	font-family: 'Amatic SC', cursive;
+	font-size: 7.5rem;
+	margin: 0;
+}
+
+.actions {
+	display: flex;
+	flex-direction: column;
+	align-items: flex-end;
+	width: 30rem;
+}
+
+.actions span {
+	color: white;
+	border: 1px solid white;
+	padding: 0 0.4rem;
+	border-radius: 1rem;
+	font-size: 1rem;
+}
+
+.actions span:hover {
+	color: rgb(255, 242, 53);
+	border: 1px solid rgb(255, 242, 53);
+	cursor: pointer;
+}
+
 .logo {
 	font-size: 7.5rem;
 }
 
+.card-container {
+	padding: 2rem;
+}
+
+.card {
+	background-color: #E6DCD0;
+	margin: 0 1rem;
+	padding: 1rem 0.5rem;
+	border-radius: 5px;
+}
+
+.tag-line {
+	font-style: italic;
+	font-size: 1rem;
+	padding-bottom: 2.5rem;
+}
+
 nav {
 	display: flex;
-	flex-direction: column;
+	flex-direction: row;
 }
 
 a {
 	color: white;
 	text-decoration: none;
+	padding: 1.5rem;
+	border: 1px solid white;
+	margin: 0 1rem;
+	border-radius: 1rem;
+	font-size: 2rem;
 }
 
 a:hover {
-	color: white;
-	text-decoration: underline;
+	color: rgb(255, 242, 53);
+	border: 1px solid rgb(255, 242, 53);
+	cursor: pointer;
 }
